@@ -1,0 +1,372 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tasks</name>
+    </assembly>
+    <members>
+        <member name="F:Tasks.Common.LoggingEvents.GetItem">
+            <summary>
+            The get item
+            </summary>
+        </member>
+        <member name="F:Tasks.Common.LoggingEvents.InsertItem">
+            <summary>
+            The insert item
+            </summary>
+        </member>
+        <member name="F:Tasks.Common.LoggingEvents.UpdateItem">
+            <summary>
+            The update item
+            </summary>
+        </member>
+        <member name="F:Tasks.Common.LoggingEvents.DeleteItem">
+            <summary>
+            The delete item
+            </summary>
+        </member>
+        <member name="F:Tasks.Common.LoggingEvents.GetItemNotFound">
+            <summary>
+            The get item not found
+            </summary>
+        </member>
+        <member name="F:Tasks.Common.LoggingEvents.UpdateItemNotFound">
+            <summary>
+            The update item not found
+            </summary>
+        </member>
+        <member name="F:Tasks.Common.LoggingEvents.DeleteItemNotFound">
+            <summary>
+            The delete item not found
+            </summary>
+        </member>
+        <member name="F:Tasks.Common.LoggingEvents.InternalError">
+            <summary>
+            The internal error
+            </summary>
+        </member>
+        <member name="F:Tasks.Controllers.TasksController.GetTaskByIdRoute">
+            <summary>
+            get task by identifier route
+            </summary>
+        </member>
+        <member name="F:Tasks.Controllers.TasksController._context">
+            <summary>
+            The database context
+            </summary>
+        </member>
+        <member name="F:Tasks.Controllers.TasksController._logger">
+            <summary>
+            logger instance
+            </summary>
+        </member>
+        <member name="F:Tasks.Controllers.TasksController._configuration">
+            <summary>
+            The cofiguration instance
+            </summary>
+        </member>
+        <member name="F:Tasks.Controllers.TasksController._taskLimits">
+            <summary>
+            tasks limit setting
+            </summary>
+        </member>
+        <member name="M:Tasks.Controllers.TasksController.#ctor(Microsoft.Extensions.Logging.ILogger{Tasks.Controllers.TasksController},Tasks.Data.MyDBContext,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Options.IOptions{Tasks.CustomSettings.TaskLimits})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tasks.Controllers.TasksController"/> class.
+            </summary>
+        </member>
+        <member name="M:Tasks.Controllers.TasksController.GetTaskById(System.Int64)">
+            <summary>
+            Retrieves a task from the database by id
+            </summary>
+            <param name="id"> The id of the task that needs to be retrieved </param>
+            <returns></returns>
+        </member>
+        <member name="M:Tasks.Controllers.TasksController.CanAddMoreTasks">
+            <summary>
+            helper method to determine whether or not tasks exceeded the limit
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Tasks.Controllers.TasksController.CreateTask(Tasks.DataTransferObjects.TaskCreatePayload)">
+            <summary>
+            Adds valid tasks to the database 
+            </summary>
+            <param name="taskCreatePayload"> taskName, isCompleted and DueDate are required fields</param>
+            <returns></returns>
+        </member>
+        <member name="M:Tasks.Controllers.TasksController.UpdateTask(System.Int64,Tasks.DataTransferObjects.TaskUpdatePayload)">
+            <summary>
+            Updates the parameters of an already existing task
+            </summary>
+            <param name="id"> id of the task that needs to be updated </param>
+            <param name="taskUpdatePayload"></param>
+            <returns> success 204 without any content if successful </returns>
+        </member>
+        <member name="M:Tasks.Controllers.TasksController.DeleteTaskById(System.Int64)">
+            <summary>
+            Deletes tasks from the database
+            </summary>
+            <param name="id"> id of the task that needs to be deleted</param>
+        </member>
+        <member name="M:Tasks.Controllers.TasksController.GetAllTasks(System.String,System.String)">
+            <summary>
+            Gets the full list of tasks (options to sort/filter)
+            </summary>
+            <param name="orderByDate"> Can be Asc or Desc</param>
+            <param name="taskStatus"> Can be Completed, NotCompleted or All</param>
+            <returns> the list of tasks</returns>
+        </member>
+        <member name="P:Tasks.CustomSettings.TaskLimits.MaxTasks">
+            <summary>
+            Gets or sets the maximum number of tasks.
+            </summary>
+            <value>
+            The maximum number of tasks.
+            </value>
+            <remarks>Setting a default max tasks if not provided in config</remarks>
+        </member>
+        <member name="T:Tasks.DataTransferObjects.ErrorResponse">
+            <summary>
+            Error response structure
+            </summary>
+        </member>
+        <member name="P:Tasks.DataTransferObjects.ErrorResponse.errorNumber">
+            <summary>
+            The number representing the error
+            </summary>
+        </member>
+        <member name="P:Tasks.DataTransferObjects.ErrorResponse.parameterName">
+            <summary>
+            Name of the parameter where the error occured
+            </summary>
+        </member>
+        <member name="P:Tasks.DataTransferObjects.ErrorResponse.parameterValue">
+            <summary>
+            The value that caused the error in the parameter
+            </summary>
+        </member>
+        <member name="P:Tasks.DataTransferObjects.ErrorResponse.errorDescription">
+            <summary>
+            The descreption of the error
+            </summary>
+        </member>
+        <member name="M:Tasks.DataTransferObjects.ErrorResponse.GetErrorNumberFromDescription(System.String)">
+            <summary>
+            Converts an error number inside an encoded error description, to the standard error number
+            </summary>
+            <param name="encodedErrorDescription">The error description</param>
+            <returns>The decoded error number</returns>
+        </member>
+        <member name="M:Tasks.DataTransferObjects.ErrorResponse.GetErrorMessage(System.String)">
+            <summary>
+            Converts an error number inside an encoded error description, to the standard error response
+            </summary>
+            <param name="encodedErrorDescription">The error description</param>
+            <returns>The decoded error message and number</returns>
+        </member>
+        <member name="M:Tasks.DataTransferObjects.ExtensionMethods.ToPascalCase(System.String)">
+            <summary>
+            Converts a camel case string to pascal case.
+            </summary>
+            <param name="camelCaseString"></param>
+            <returns>A pascal case string</returns>
+        </member>
+        <member name="M:Tasks.DataTransferObjects.ExtensionMethods.ToCamelCase(System.String)">
+            <summary>
+            Converts a pascal case string string to camel case
+            </summary>
+            <param name="pascalCaseString"></param>
+            <returns>A camel case string</returns>
+        </member>
+        <member name="M:Tasks.DataTransferObjects.ExtensionMethods.CleanseModelStateKey(System.String)">
+            <summary>
+            Removes leading charcters used when an attribute is "not found"
+            </summary>
+            <param name="modelStateKey">The model state key</param>
+            <returns>The model state key with leading characters removed if a result of a not found error</returns>
+        </member>
+        <member name="T:Tasks.DataTransferObjects.TaskCreatePayload">
+            <summary>
+            Task creation shape
+            </summary>
+        </member>
+        <member name="P:Tasks.DataTransferObjects.TaskCreatePayload.TaskName">
+            <summary>
+            Gets or sets the task description
+            </summary>
+        </member>
+        <member name="P:Tasks.DataTransferObjects.TaskCreatePayload.IsCompleted">
+            <summary>
+            Gets or sets boolean value (true/false) to isCompleted 
+            </summary>
+            <value>
+            <c>true</c> if the task is completed <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Tasks.DataTransferObjects.TaskCreatePayload.DueDate">
+            <summary>
+            Get or set the due date
+            </summary>
+        </member>
+        <member name="M:Tasks.DataTransferObjects.TaskCreatePayload.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+        </member>
+        <member name="T:Tasks.DataTransferObjects.TaskResultPayload">
+            <summary>
+            Defines the public facing task attributes
+            </summary>
+        </member>
+        <member name="M:Tasks.DataTransferObjects.TaskResultPayload.#ctor(Tasks.Models.TaskClass)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tasks.DataTransferObjects.TaskResultPayload"/> class using a TaskClass as input
+            </summary>
+            <param name="task"> task </param>
+        </member>
+        <member name="P:Tasks.DataTransferObjects.TaskResultPayload.Id">
+            <summary>
+            Gets or sets the task identifier.
+            </summary>
+        </member>
+        <member name="P:Tasks.DataTransferObjects.TaskResultPayload.TaskName">
+            <summary>
+            Gets or sets the task name
+            </summary>
+        </member>
+        <member name="P:Tasks.DataTransferObjects.TaskResultPayload.DueDate">
+            <summary>
+            Gets or sets Due date
+            </summary>
+        </member>
+        <member name="P:Tasks.DataTransferObjects.TaskResultPayload.IsCompleted">
+            <summary>
+            Gets or sets boolean value (true/false) to isCompleted 
+            </summary>
+        </member>
+        <member name="T:Tasks.DataTransferObjects.TaskUpdatePayload">
+            <summary>
+            The task updating shape
+            </summary>
+        </member>
+        <member name="P:Tasks.DataTransferObjects.TaskUpdatePayload.TaskName">
+            <summary>
+            Gets or sets the task name
+            </summary>
+        </member>
+        <member name="P:Tasks.DataTransferObjects.TaskUpdatePayload.IsCompleted">
+            <summary>
+            Gets or sets boolean value (true/false) to isCompleted 
+            </summary>
+            <value>
+            <c>true</c> if the task is completed <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Tasks.DataTransferObjects.TaskUpdatePayload.DueDate">
+            <summary>
+            Gets or sets due date 
+            </summary>
+        </member>
+        <member name="M:Tasks.DataTransferObjects.TaskUpdatePayload.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String" /> that represents this instance.
+            </returns>
+        </member>
+        <member name="T:Tasks.Data.DbInitializer">
+            <summary>
+            Initialize seeds 
+            </summary>
+        </member>
+        <member name="M:Tasks.Data.DbInitializer.Initialize(Tasks.Data.MyDBContext)">
+            <summary>
+            Initializes the specified context with data
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Tasks.Data.MyDBContext">
+            <summary>
+             Coordinates Entity Framework functionality for a given data model is the database context class
+            </summary>
+        </member>
+        <member name="M:Tasks.Data.MyDBContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{Tasks.Data.MyDBContext})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Tasks.Data.MyDBContext"/> class.
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="P:Tasks.Data.MyDBContext.Tasks">
+            <summary>
+            Creating the table Tasks and its accessor and mutator
+            </summary>
+        </member>
+        <member name="M:Tasks.Middleware.EnableMultipleStreamReadMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Implements the InvokeAsync method to support multiple reads from the Response.Body
+            </summary>
+            <param name="context">The HttpContext</param>
+            <param name="next">The request delegate</param>
+            <returns>A Task</returns>
+        </member>
+        <member name="M:Tasks.Middleware.MiddlewareExtensions.UseMultipleStreamReadMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Helper to enable the multiple stream reader middleware
+            </summary>
+            <param name="builder">The application builder</param>
+            <returns>An application builder</returns>
+        </member>
+        <member name="T:Tasks.Models.TaskClass">
+            <summary>
+            The Task entity
+            </summary>
+        </member>
+        <member name="P:Tasks.Models.TaskClass.Id">
+            <summary>
+            Gets or sets the task identifier.
+            </summary>
+        </member>
+        <member name="P:Tasks.Models.TaskClass.TaskName">
+            <summary>
+            Gets or sets the task description
+            </summary>
+        </member>
+        <member name="P:Tasks.Models.TaskClass.IsCompleted">
+            <summary>
+            Gets or sets boolean value (true/false) to isCompleted 
+            </summary>
+            <value>
+            <c>true</c> if the task is completed <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Tasks.Models.TaskClass.DueDate">
+            <summary>
+            Gets or sets the due date
+            </summary>
+        </member>
+        <member name="M:Tasks.Models.TaskClass.ToString">
+            <summary>
+            Returns a <see cref="T:System.String" /> that represents this instance.
+            </summary>
+        </member>
+        <member name="M:Tasks.Startup.SetupCustomSettings(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Sets up custom, strongly typed settings
+            </summary>
+            <param name="services">The service colleciton</param>
+        </member>
+        <member name="M:Tasks.Startup.SetupSwaggerDocuments(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Sets up the swagger documents
+            </summary>
+            <param name="services">The service collection</param>
+        </member>
+        <member name="M:Tasks.Startup.SetupSwaggerJsonGeneratgionAndUI(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Sets up the Swagger JSON file and Swagger Interactive UI
+            </summary>
+            <param name="app">The application builder</param>
+        </member>
+    </members>
+</doc>

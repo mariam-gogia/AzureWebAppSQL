@@ -1,0 +1,8 @@
+C:\Users\Mariam\Desktop\MySolutions\TasksSolution\RestClientSDKlibrary\bin\Debug\netcoreapp3.1\RestClientSDKlibrary.deps.json
+C:\Users\Mariam\Desktop\MySolutions\TasksSolution\RestClientSDKlibrary\bin\Debug\netcoreapp3.1\RestClientSDKlibrary.dll
+C:\Users\Mariam\Desktop\MySolutions\TasksSolution\RestClientSDKlibrary\obj\Debug\netcoreapp3.1\RestClientSDKlibrary.csprojAssemblyReference.cache
+C:\Users\Mariam\Desktop\MySolutions\TasksSolution\RestClientSDKlibrary\obj\Debug\netcoreapp3.1\RestClientSDKlibrary.AssemblyInfoInputs.cache
+C:\Users\Mariam\Desktop\MySolutions\TasksSolution\RestClientSDKlibrary\obj\Debug\netcoreapp3.1\RestClientSDKlibrary.AssemblyInfo.cs
+C:\Users\Mariam\Desktop\MySolutions\TasksSolution\RestClientSDKlibrary\bin\Debug\netcoreapp3.1\RestClientSDKlibrary.pdb
+C:\Users\Mariam\Desktop\MySolutions\TasksSolution\RestClientSDKlibrary\obj\Debug\netcoreapp3.1\RestClientSDKlibrary.dll
+C:\Users\Mariam\Desktop\MySolutions\TasksSolution\RestClientSDKlibrary\obj\Debug\netcoreapp3.1\RestClientSDKlibrary.pdb
