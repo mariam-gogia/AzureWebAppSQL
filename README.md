@@ -9,7 +9,7 @@ Azure SQL PaaS is used to host the database. The application is deployed to Micr
 https://tasksdbhw2.azurewebsites.net
 
 **Framework:**
-Visual Studio 2019, C#, ASP.NET Core, LINQ, Azure SQL, .NET Core API 3.1, Entity Framework Core.
+Visual Studio 2019, C#, ASP.NET Core, LINQ, Azure SQL, .NET Core API 3.1, Entity Framework Core, MS Tests.
 
 **Overview:**
 
