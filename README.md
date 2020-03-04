@@ -97,7 +97,8 @@ Responses:
 2. 400 (Bad Request) 
 3. 409 (Conflict) – return if user tries to put already existing task using different id.
 </pre>
-**3. API Operation – Delete**
+
+** 3. API Operation – Delete **
 
 Deletes task with specified id 
 Implemented as HTTP DELETE action
