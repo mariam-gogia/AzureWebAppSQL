@@ -98,6 +98,7 @@ Responses:
 3. 409 (Conflict) – return if user tries to put already existing task using different id.
 </pre>
 **3. API Operation – Delete**
+
 Deletes task with specified id 
 Implemented as HTTP DELETE action
 
@@ -110,6 +111,7 @@ Responses
 2. 404(Not Found) – a task with given id cannot be found
 </pre>
 **4. API Operation – Retrieve by Id**
+
 Gets task with specified id
 Implemented as HTTP GET action
 
@@ -127,6 +129,7 @@ URI parameter: id
 2. 404 (Not Found)
 
 **5. API Operation – Retrieve all**
+
 Retrieves all tasks
 Implemented as HTTP GET action
 
