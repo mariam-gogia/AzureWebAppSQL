@@ -20,7 +20,7 @@ Each of this action is reviewed in detail below.
 
 Project uses customized error responses, details about error responses are provided at the end of this document.
 
-1. API operation - Create Task
+**1. API operation - Create Task**
 
 Implemented as HTTP POST action.
 
@@ -76,7 +76,7 @@ Response body example for 409(Conflict):
        “errorDescription:”  “The entity already exists”
 }
 </pre>
-2. API Operation – Update Task
+**2. API Operation – Update Task**
 If user provides the task id, she/he can alter the body of that task
 Implemented as HTTP PATCH action
 
@@ -97,7 +97,7 @@ Responses:
 2. 400 (Bad Request) 
 3. 409 (Conflict) – return if user tries to put already existing task using different id.
 </pre>
-3. API Operation – Delete
+**3. API Operation – Delete**
 Deletes task with specified id 
 Implemented as HTTP DELETE action
 
@@ -109,7 +109,7 @@ Responses
 1. 204(No Content) – success
 2. 404(Not Found) – a task with given id cannot be found
 </pre>
-4. API Operation – Retrieve by Id
+**4. API Operation – Retrieve by Id**
 Gets task with specified id
 Implemented as HTTP GET action
 
@@ -126,7 +126,7 @@ URI parameter: id
 </pre>
 2. 404 (Not Found)
 
-5. API Operation – Retrieve all
+**5. API Operation – Retrieve all**
 Retrieves all tasks
 Implemented as HTTP GET action
 
