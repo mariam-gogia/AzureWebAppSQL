@@ -1,17 +1,17 @@
 # AzureWebAppSQL
 Azure web app employing SQL database
 
-***Project
+***Project***
 
 REST interface that employs .NET Core API that uses Entity Framework Core and Azure SQL for creation and management of a task list.
 
 Azure SQL PaaS is used to host the database. The application is deployed to Microsoft Azure App Service and can be found at:
 https://tasksdbhw2.azurewebsites.net
 
-**Framework:
+**Framework:**
 Visual Studio 2019, C#, ASP.NET Core, LINQ, Azure SQL, .NET Core API 3.1, Entity Framework Core.
 
-**Overview:
+**Overview:**
 
 The application supports up to 100 tasks. Communication is done entirely using JSON objects.
 User can create, delete, retrieve tasks by id, and retrieve all tasks.
