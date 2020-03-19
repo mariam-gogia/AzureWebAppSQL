@@ -3,7 +3,7 @@ Azure web app employing SQL database
 
 ***Project***
 
-REST interface that employs .NET Core API that uses Entity Framework Core and Azure SQL for creation and management of a task list.
+REST interface that employs .NET Core API that uses Entity Framework Core and Azure SQL for creation and management of list of tasks.
 
 Azure SQL PaaS is used to host the database. The application is deployed to Microsoft Azure App Service and can be found at:
 https://tasksdbhw2.azurewebsites.net
@@ -155,7 +155,7 @@ Responses:
      ]
 }
 </pre>
-2. 400 (Bad Request) -  return of values in optional parameter fields are incorrect
+2. 400 (Bad Request) -  return if values in optional parameter fields are incorrect
 <pre>
 Error Response JSON:
 {
