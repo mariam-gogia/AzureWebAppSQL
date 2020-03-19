@@ -37,7 +37,7 @@ Responses:
 Response body example for 201(Created):
 <pre>
 { 
-        “id”: 1
+       “id”: 1
        “taskName” : “Buy Groceries”,
        “isCompleted” : false,
        “dueDate” :  “2020-04-23”
