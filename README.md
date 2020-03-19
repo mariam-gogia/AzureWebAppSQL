@@ -26,9 +26,9 @@ Implemented as HTTP POST action.
 
 Request Body:
 { 
-       “taskName” : “<the task name>”,
-       “isCompleted”: <true or false>,
-       “dueDate”: <the date the task is due in ISO 8601 format>”
+       “taskName” : “the task name”,
+       “isCompleted”: true or false,
+       “dueDate”: the date the task is due in ISO 8601 format”
 }
 
 Responses:
@@ -51,7 +51,7 @@ Response body example for 400(Bad Request):
 { 
        “errorNumber” : 2
        “parameterName” : “taskName”,
-       “parameterValue” :“<value provided that cause the error>”,
+       “parameterValue” :“value provided that cause the error”,
        “errorDescription” : “The parameter is too large”
 }
 </pre>
@@ -72,7 +72,7 @@ Response body example for 409(Conflict):
 { 
        “errorNumber” : 1
        “parameterName” : “taskName”,
-       “parameterValue” : “<value provided that cause the error>”,
+       “parameterValue” : “value provided that cause the error”,
        “errorDescription:”  “The entity already exists”
 }
 </pre>
@@ -84,9 +84,9 @@ URI Parameter: id
 <pre>
 Request body:
 { 
-       “taskName” : “<the task name>”,
-       “isCompleted”: <true or false>,
-       “dueDate”: <the date the task is due in ISO 8601 format>”
+       “taskName” : “the task name”,
+       “isCompleted”: true or false,
+       “dueDate”: the date the task is due in ISO 8601 format”
 }
 </pre>
 Responses:
@@ -121,10 +121,10 @@ URI parameter: id
 1. 200 (OK) response body:
 <pre>
 {
-       “id” :<numeric id of the task>,
-       “taskName”: “<the task name>”,
-       “dueDate”: “<the date the task is due in ISO 8601 format>”
-       “isCompleted”: <true or false>
+       “id” :numeric id of the task,
+       “taskName”: “the task name”,
+       “dueDate”: “the date the task is due in ISO 8601 format”
+       “isCompleted”: true or false
 }
 </pre>
 2. 404 (Not Found)
@@ -141,29 +141,34 @@ Responses:
 { 
       "tasks": [
         {
-	"id":<numeric id of task 1>,
-	"taskName":"<the name of task 1>",
-	"dueDate":"<the date the task is due in ISO 8601 format of task 1>",
+	"id":numeric id of task 1,
+	"taskName":"the name of task 1",
+	"dueDate":"the date the task is due in ISO 8601 format of task 1",
 	"isCompleted":false
         },
         {
-	"id":<numeric id of task 2>,
-	"taskName":"<the name of task 2>",
-	"dueDate":"<the date the task is due in ISO 8601 format of task 2>",
+	"id":numeric id of task 2,
+	"taskName":"the name of task 2",
+	"dueDate":"the date the task is due in ISO 8601 format of task 2",
 	"isCompleted":false
          },
      ]
 }
 </pre>
 2. 400 (Bad Request) -  return if values in optional parameter fields are incorrect
+**Errors**
+
+All http 400 and 404 errors return response body using the template below.
+Error responses are manually created and numbers are arbitrarily assigned to them.
 <pre>
 Error Response JSON:
 {
-	"errorNumber":<error number>,
-	"parameterName":"<name of parameter that caused the error>",
-	"parameterValue":"<value of parameter that caused the error>",
-	"errorDescription":"<Description of the error intended developer consumption>"
+	"errorNumber": error number,
+	"parameterName": " name of parameter that caused the error" ,
+	"parameterValue":"value of parameter that caused the error",
+	"errorDescription":"Description of the error"
 }
 </pre>
+
 
 • Project includes client SDK of the REST interface which is utilized by MS Tests. MS Tests test the functionality of the REST interface
